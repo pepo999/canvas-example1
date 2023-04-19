@@ -21,9 +21,9 @@ const iterations = maxIterationsInput.value;
 let rotation = document.getElementById('rotation-input');
 let rotate = rotation.value;
 
-let r = 80;
+let r = 120;
 let g = 1;
-let b = 80;
+let b = 120;
 
 
 function generate() {
@@ -46,10 +46,6 @@ function recursiveLeft(startx, starty, counter, rotate) {
     if((counter * counter) >= iterations) {
         return;
     }
-    r+= counter * 5;
-    g+= counter * 5;
-    b+= counter * 5;
-    ctx.strokeStyle = `rgb(${r},${g},${b})`
     ctx.beginPath();
     ctx.moveTo(startx, starty);
     let newStartX = startx - (starty / 2);
@@ -67,9 +63,6 @@ function recursiveRight(startx, starty, counter, rotate) {
     if((counter * counter) >= iterations) {
         return;
     }
-    r+= counter * 5;
-    g+= counter * 5;
-    b+= counter * 5;
     ctx.strokeStyle = `rgb(${r},${g},${b})`
     ctx.beginPath();
     ctx.moveTo(startx, starty);
@@ -83,32 +76,27 @@ function recursiveRight(startx, starty, counter, rotate) {
 }
 
 
-// function draw() {
-//         var ctx = document.getElementById('my-canvas').getContext('2d');
-
-//         var currentPoint={x: 500, y: 300}; //start point
-//         var moveDist = 300;
-//         var turnAngle = 144;
-//         var repetitions = 5;
-//         var turnAngleRadians = turnAngle * (Math.PI/180)
-//         var moveVector = {x:moveDist, y:0}; //start facing right
-
-//         ctx.beginPath();
-//         ctx.moveTo(currentPoint.x, currentPoint.y);
-//         for(i=0;i<repetitions;i++){
-//             moveVector = updateMV(moveVector, turnAngleRadians);
-//             currentPoint.x = currentPoint.x + moveVector.x;
-//             currentPoint.y = currentPoint.y + moveVector.y;
-//             ctx.lineTo(currentPoint.x, currentPoint.y);
-//         }
-//         ctx.stroke();
+// function recursive(startx, starty, counter) {  
+//     console.log('startXR = ' + startx + ' , startyR = ' + starty + ' and counterR = ' + counter + 'and rotate ' + rotate)
+//     if(counter*counter >= iterations) {
+//         return;
 //     }
-
-// function updateMV(moveVector, turnAngleRadians){
-//     var x2, y2
-//     x2 =    Math.cos(turnAngleRadians) * moveVector.x - Math.sin(turnAngleRadians) * moveVector.y;
-//     y2 =    Math.sin(turnAngleRadians) * moveVector.x - Math.cos(turnAngleRadians) * moveVector.y;
-//     moveVector.x = x2;
-//     moveVector.y = y2;
-//     return moveVector
+//     r+= counter * 5;
+//     g+= counter * 5;
+//     b+= counter * 5;
+//     ctx.strokeStyle = `rgb(${r},${g},${b})`
+//     ctx.beginPath();
+//     ctx.moveTo(startx, starty);
+//     let newStartXl = startx + (starty / 2);
+//     let newStartYl = starty / 2;
+//     ctx.lineTo(newStartXl, newStartYl);
+//     ctx.stroke();
+//     ctx.beginPath();
+//     ctx.moveTo(startx, starty);
+//     let newStartXr = startx + (starty / 2);
+//     let newStartYr = starty / 2;
+//     ctx.lineTo(newStartXr, newStartYr);
+//     ctx.stroke();
+//     recursive(newStartXr, newStartYr, counter + 1);
+//     recursive(newStartXl, newStartYl, counter + 1);
 // }
