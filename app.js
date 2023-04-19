@@ -12,14 +12,8 @@ for (let i = 0; i < 100; i++) {
     ctx.strokeRect(originX, originy, width, height);
 }
 
-let inputX = document.getElementById('x-input');
-let x = inputX.value;
-let inputY = document.getElementById('y-input');
-let y = inputY.value;
 let maxIterationsInput = document.getElementById('iteration-input')
 const iterations = maxIterationsInput.value;
-let rotation = document.getElementById('rotation-input');
-let rotate = rotation.value;
 
 let r = 120;
 let g = 1;
@@ -37,12 +31,12 @@ function generate() {
     ctx.moveTo(500, 1000);
     ctx.lineTo(startX, startY);
     ctx.stroke();
-    recursiveLeft(startX, startY, counter, rotate);
-    recursiveRight(startX, startY, counter, rotate);
+    recursiveLeft(startX, startY, counter);
+    recursiveRight(startX, startY, counter);
 }
 
-function recursiveLeft(startx, starty, counter, rotate) {  
-    console.log('startXL = ' + startx + ' , startyL = ' + starty + ' and counterL = ' + counter + 'and rotate ' + rotate)
+function recursiveLeft(startx, starty, counter) {  
+    console.log('startXL = ' + startx + ' , startyL = ' + starty + ' and counterL = ' + counter)
     if((counter * counter) >= iterations) {
         return;
     }
@@ -50,16 +44,15 @@ function recursiveLeft(startx, starty, counter, rotate) {
     ctx.moveTo(startx, starty);
     let newStartX = startx - (starty / 2);
     let newStartY = starty / 2;
-    let newRotater = Number(rotate);
     ctx.lineTo(newStartX, newStartY);
     ctx.stroke();
-    recursiveLeft(newStartY, newStartY, counter + 1, newRotater);
-    recursiveRight(newStartX, newStartY, counter + 1, newRotater);
+    recursiveLeft(newStartY, newStartY, counter + 1);
+    recursiveRight(newStartX, newStartY, counter + 1);
  
 }
 
-function recursiveRight(startx, starty, counter, rotate) {  
-    console.log('startXR = ' + startx + ' , startyR = ' + starty + ' and counterR = ' + counter + 'and rotate ' + rotate)
+function recursiveRight(startx, starty, counter) {  
+    console.log('startXR = ' + startx + ' , startyR = ' + starty + ' and counterR = ' + counter)
     if((counter * counter) >= iterations) {
         return;
     }
@@ -68,11 +61,10 @@ function recursiveRight(startx, starty, counter, rotate) {
     ctx.moveTo(startx, starty);
     let newStartX = startx + (starty / 2);
     let newStartY = starty / 2;
-    let newRotater = Number(rotate);
     ctx.lineTo(newStartX, newStartY);
     ctx.stroke();
-    recursiveLeft(newStartX, newStartY, counter + 1, newRotater);
-    recursiveRight(newStartX, newStartY,counter +1, newRotater);
+    recursiveLeft(newStartX, newStartY, counter + 1);
+    recursiveRight(newStartX, newStartY,counter +1);
 }
 
 
