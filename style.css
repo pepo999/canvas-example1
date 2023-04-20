@@ -26,3 +26,7 @@ span{
     justify-content: center;
     align-items: center;
 }
+
+#my-canvas{
+    border: solid 1px rgb(61, 61, 61);
+}
