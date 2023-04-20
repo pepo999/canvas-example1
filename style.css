@@ -1,3 +1,16 @@
-input{
-    background-color: rgb(rgb(215, 102, 102), green, blue);
+html, body{
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+h1{
+    color: rgb(190, 1, 190);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
