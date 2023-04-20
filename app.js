@@ -29,8 +29,8 @@ function walk(point, interval) {
             b = b + Math.random() - Math.random();
             ctx.fillStyle = `rgb(${r},${g},${b},1)`;
             ctx.fillRect(point.x, point.y, (Math.random()) + 2, (Math.random()) + 2);
-            point.x = point.x + (Math.random() - Math.random())* 2;
-            point.y = point.y + (Math.random() - Math.random())* 2; 
+            point.x = point.x + (Math.random() - Math.random())* 3;
+            point.y = point.y + (Math.random() - Math.random())* 3; 
         }, interval);
     }
 }
