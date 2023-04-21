@@ -45,6 +45,7 @@ const point4 = new Point()
 // darken(1)
 // walk(point1, 25)
 let blur = 0;
+// walk(point2 )
 
 function darken(interval){
     setInterval(() => {
