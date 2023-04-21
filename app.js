@@ -49,7 +49,7 @@ let blur = 0;
 
 function darken(interval){
     setInterval(() => {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; 
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.07)'; 
         ctx.fillRect(0, 0, ctxX, ctxY);
-    }, interval);
+    }, 20);
 }
