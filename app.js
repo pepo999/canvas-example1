@@ -4,8 +4,10 @@ const ctx = myCanvas.getContext('2d');
 
 const inputX = document.getElementById('x-input');
 const inputY = document.getElementById('y-input');
+const inputSpeed = document.getElementById('speed-input')
 let ctxX = inputX.value;
 let ctxY = inputX.value;
+let speed = inputSpeed.value/50;
 myCanvas.width = ctxX;
 myCanvas.height = ctxY;
 
@@ -29,8 +31,8 @@ function walk(point, interval) {
             b = b + Math.random() - Math.random();
             ctx.fillStyle = `rgb(${r},${g},${b},1)`;
             ctx.fillRect(point.x, point.y, (Math.random()) + 2, (Math.random()) + 2);
-            point.x = point.x + (Math.random() - Math.random())* 3;
-            point.y = point.y + (Math.random() - Math.random())* 3; 
+            point.x = point.x + (Math.random() - Math.random())* (speed);
+            point.y = point.y + (Math.random() - Math.random())* (speed); 
         }, interval);
     }
 }
