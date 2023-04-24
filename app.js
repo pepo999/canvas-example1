@@ -7,7 +7,8 @@ const inputY = document.getElementById('y-input');
 const inputSpeed = document.getElementById('speed-input')
 let ctxX = inputX.value;
 let ctxY = inputX.value;
-let speed = inputSpeed.value/50;
+// let speed = inputSpeed.value/50;
+let speed = 5;
 myCanvas.width = ctxX;
 myCanvas.height = ctxY;
 
